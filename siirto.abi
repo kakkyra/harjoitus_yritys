@@ -1,0 +1,28 @@
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(1337, '127.0.0.1');
+console.log('Server running at http://127.0.0.1:1337/');
+
+var Database = require('./database/database');
+var database = new Database();
+
+
+
+ socket.on('add link', function(msg){
+    console.log('message: ' + msg);
+    msg = JSON.parse(msg);
+    // Do a SQL query
+    database.addlink(msg.link, msg.description, socket);
+  });
+ //tämä on esimerkkitehtävästä, mitä socketteja minä tarvitsen?
+
+app.get('/HAE', function(req, res) {
+	var strQuery='select Ytunnus from YRITYS';
+	connection.query( strQuery, function(err, rows, resp){
+		res.send(JSON.stringify(rows[0]));
+	});
+}
+
+
