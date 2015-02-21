@@ -1,0 +1,4 @@
+=JSON.parse(data)
+
+	//.done(function(data) {
+	//document.getElementById("tietoja_nayta").innerHTML;
