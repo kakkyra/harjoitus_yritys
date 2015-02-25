@@ -1,1 +1,0 @@
-# harjoitus_yritys
