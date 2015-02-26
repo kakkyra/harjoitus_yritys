@@ -28,7 +28,18 @@ var server = app.listen(3000, '127.0.0.1',function () {
 }); 
 
 app.get('/tietojanayta', function(req, res) {
-	var strQuery = 'SELECT Ytunnus, yritysnimi, katuosoite from YRITYS';
+	var strQuery = 'SELECT Ytunnus, katuosoite from YRITYS';
+	var sendThis;
+
+	connection.query( strQuery, function(err, rows, resp) {
+  		sendThis = rows; //(JSON.stringify(rows));
+      res.send(sendThis);
+      console.log(rows);
+      });
+});
+
+app.get('/tietojanayta_tp', function(req, res) {
+	var strQuery = 'SELECT toimipisteID, yritystunnus, nimi from TOIMIPISTE';
 	var sendThis;
 
 	connection.query( strQuery, function(err, rows, resp) {
